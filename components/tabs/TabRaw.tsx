@@ -18,8 +18,8 @@ export default function TabRaw({ data }: { data: DashboardData }) {
   const [page, setPage] = useState(1)
   const PER_PAGE = 50
 
-  const levels = [...new Set(data.candidates.map(c => c.level))].sort()
-  const nguons = [...new Set(data.candidates.map(c => c.nguon))].sort()
+const levels = Array.from(new Set(data.candidates.map(c => c.level))).sort();
+const nguons = Array.from(new Set(data.candidates.map(c => c.nguon))).sort();
 
   const filtered = useMemo(() => {
     return data.candidates.filter(c => {
